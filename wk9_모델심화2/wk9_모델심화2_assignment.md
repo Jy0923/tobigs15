@@ -24,7 +24,7 @@ attention mechanism은 다양한 작업에서 sequence modeling 및 transduction
 
 ## 2 Background
 
-Extended Nearal GPU, ByteNet, ConvS2S는 순차적인 계산을 줄이는 목표를 가졌으며  모두 convolutional nearal network를 사용하여 모든 입력과 출력 position에 대해 병렬로 hidden representation을 계산한다. 이 모델들에서는 두 임의의 입력 또는 출력의 position에서 오는 신호를 연결하는데 필요한 연산의 수는 위치 간 거리에 대해 증가하는데, ConvS2S는 선형적으로, ByteNet은 대수적으로 증가하고, 이로 인해 먼 위치 간의 dependency를 학습하기 더 어려워진다. Transformer는 multi-head attention의 효과 덕분에 연산량이 constant하게 줄어든다.
+Extended Nearal GPU, ByteNet, ConvS2S는 순차적인 계산을 줄이는 목표를 가졌으며  모두 convolutional nearal network를 사용하여 모든 입력과 출력 position에 대해 병렬로 hidden representation을 계산한다. 이 모델들에서는 두 임의의 입력 또는 출력의 position에서 오는 신호를 연결하는데 필요한 연산의 수는 위치 간 거리에 대해 증가하는데, ConvS2S는 선형적으로, ByteNet은 대수적으로 증가하고 이로 인해 먼 위치 간의 dependency를 학습하기 더 어려워진다. Transformer는 multi-head attention의 효과 덕분에 연산량이 constant하게 줄어든다.
 
 intra-attention이라고도 불리는 self-attention은 sequence의 representation을 계산하기 위해 단일 sequence의 다른 위치를 연관시키는 attention mechanism이다. self-attention은 reading comprehension, abstractive summarization등의 다양한 작업에서 성공적으로 사용되었다.
 
