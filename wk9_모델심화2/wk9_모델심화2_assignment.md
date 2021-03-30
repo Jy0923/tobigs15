@@ -38,7 +38,7 @@ intra-attention이라고도 불리는 self-attention은 sequence의 representati
 
 Transformer는 Figure1에 표시된 encoder, decoder 모두에 대해 self-attention과 point-wise fully connected layer가 쌓여진 구조를 사용한다.
 
-![이미지]()
+![](https://github.com/Jy0923/tobigs15/blob/master/wk9_%EB%AA%A8%EB%8D%B8%EC%8B%AC%ED%99%942/Figure1_Transformer.PNG)
 
 
 
@@ -65,8 +65,7 @@ Transformer는 Figure1에 표시된 encoder, decoder 모두에 대해 self-atten
 
 Attention function은 query와 key-value쌍의 집합을 출력에 mapping하는 것으로 표현할 수 있다. 출력은 value들의 가중 합으로 계산되며 각각의 value에 해당되는 가중치는 query와 그에 해당하는 key에 대한 compatibility function에 의해 계산된다.
 
-![이미지]()
-
+![](https://github.com/Jy0923/tobigs15/blob/master/wk9_%EB%AA%A8%EB%8D%B8%EC%8B%AC%ED%99%942/Scaled_Dot_Product_Attention.PNG)
 
 
 #### 3.2.1 Scaled Dot-Product Attention
@@ -90,7 +89,7 @@ Attention function은 query와 key-value쌍의 집합을 출력에 mapping하는
 
 #### 3.2.2 Multi-Head Attention
 
-![이미지]()
+![](https://github.com/Jy0923/tobigs15/blob/master/wk9_%EB%AA%A8%EB%8D%B8%EC%8B%AC%ED%99%942/Multi_Head_Attention.PNG)
 
 $d_{model}$차원의 key, value, query를 사용하여 하나의 attention function을 수행하는 대신 학습된 서로 다른 linear projection을 사용하여 query, key, value를 각각 $d_k, d_k, d_v$차원으로 linearly projection을 $h$번 수행하는 것이 더 효과적이다.($d_k = d_v = d_{model}/h$)($h$번 linear projection 후 concat하여 $d_{model}$차원을 만들어준다) 각각 projected된 query, key, value들에 대해 attention function을 병렬로 수행하고 $d_v$차원의 출력값을 만든다. 이것들은 concat되고 다시 한번 projected되어 최종 값이 생성된다.
 
@@ -152,7 +151,7 @@ pos는 position을, i는 차원을 의미한다. positional encoding의 각 차�
 * 병렬화 할 수 있는 계산의 양이 적다.(필요한 sequential operation의 수가 적다.)
 * network에서 long-range dependency 간의 경로의 길이가 짧다.(long-range dependency를 학습하는 것은 sequential transduction의 핵심 과제이다.) 이러한 dependency의 학습에 영향을 미치는 중요한 요소중 하나는 순전파 및 역전파의 신호가 network에서 통과해야 하는 경로의 길이이다. 입력 및 출력 sequence의 위치 조합 사이의 경로가 짧을수록 long-range dependency를 배우는 것은 더 쉽다.
 
-![이미지]()
+![](https://github.com/Jy0923/tobigs15/blob/master/wk9_%EB%AA%A8%EB%8D%B8%EC%8B%AC%ED%99%942/Table1_Transformer.PNG)
 
 * self-attention layer와 recurrent layer
 
